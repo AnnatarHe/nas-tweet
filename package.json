@@ -4,6 +4,7 @@
   "description": "a song copyright platform base on Nas",
   "main": "index.js",
   "scripts": {
+    "ts": "tsc ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,11 @@
   },
   "homepage": "https://github.com/AnnatarHe/nas-tweet#readme",
   "dependencies": {
-    "nebulas": "^0.4.8"
+    "nebulas": "^0.4.8",
+    "typescript": "^2.8.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1"
   }
 }

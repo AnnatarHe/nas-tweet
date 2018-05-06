@@ -32,7 +32,7 @@ class SongContract {
         });
     }
 
-    save(title, author, url, createdAt) {
+    save(title: string, author, url, createdAt) {
         const from = Blockchain.transaction.from;
         
         const itemStr = JSON.stringify({ title, author, url, createdBy: from })
