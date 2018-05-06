@@ -13,15 +13,17 @@
     <script src="./scripts/nebPay.0.0.1.js"></script>
 </head>
 <body>
-    <div class="alert alert-error">
-        NOTE: Please install <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a>  to use SUPER DICTIONARY
+    <div class="container page-body">
+        <div class="alert alert-dark shadow p-3 mb-5 bg-white rounded invisible" id="extension-alert">
+            NOTE: 请安装 <a target="_blank" href="https://github.com/ChengOrangeJu/WebExtensionWallet">WebExtensionWallet</a> 再使用 <strong>音乐版权链上确认系统</strong>
+        </div>
+        <button id="save" class="btn btn-primary">Save</button>
+        <button id="refrash" class="btn btn-info">refrash</button>
     </div>
-
-    <button id="save" class="button button-primary">Save</button>
-
+    
     <script>
         window.NAS_SONG_CONFIG = {
-            CONTRACT_ADDRESS: "n1qModuEndooA1SFPVLd2p3YAVKoVriR22e"
+            CONTRACT_ADDRESS: "n1hfp6LAkn1Umgtyv9HVTjzw8Knkx5o3gWi"
         }
     </script>
     <script src="./scripts/index.v1.js"></script>
