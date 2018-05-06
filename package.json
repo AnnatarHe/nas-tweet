@@ -1,0 +1,23 @@
+{
+  "name": "nas-song",
+  "version": "1.0.0",
+  "description": "a song copyright platform base on Nas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnatarHe/nas-tweet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnatarHe/nas-tweet/issues"
+  },
+  "homepage": "https://github.com/AnnatarHe/nas-tweet#readme",
+  "dependencies": {
+    "nebulas": "^0.4.8"
+  }
+}
