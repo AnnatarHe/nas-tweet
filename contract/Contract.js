@@ -12,6 +12,7 @@ class SongItem {
             this.url = obj.url
             this.createdAt = obj.createdAt
             this.createdBy = obj.createdBy
+            this.coverUrl = obj.coverUrl
         }
     }
     toString() {
@@ -32,14 +33,14 @@ class SongContract {
     }
     init() {}
 
-    save(title, author, url, createdAt) {
+    save(title, author, url, createdAt, coverUrl) {
         var from = Blockchain.transaction.from;
         var songItem = this.repo.get(title);
         if (songItem){
             throw new Error("value has been occupied");
         }
 
-        songItem = new SongItem(JSON.stringify({ title, author, url, createdBy: from, createdAt }));
+        songItem = new SongItem(JSON.stringify({ title, author, url, createdBy: from, createdAt, coverUrl }));
         this.repo.put(title, songItem);
     }
 
