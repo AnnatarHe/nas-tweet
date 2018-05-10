@@ -1,11 +1,11 @@
 import React from 'react'
-import TitleBar from './components/TitleBar'
+import { Router, Route, browserHistory } from 'react-router'
+import routes from './routes'
+import './styles/index.styl'
 
 const Root = () => {
     return (
-        <div>
-          <TitleBar />
-        </div>
+      <Router routes={routes} history={browserHistory} />
     )
 }
 
