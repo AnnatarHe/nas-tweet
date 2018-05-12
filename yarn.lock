@@ -1745,6 +1745,12 @@ camelcase@^4.0.0, camelcase@^4.1.0:
   version "4.1.0"
   resolved "http://registry.npm.taobao.org/camelcase/download/camelcase-4.1.0.tgz#d545635be1e33c542649c69173e5de6acfae34dd"
 
+can-promise@^0.0.1:
+  version "0.0.1"
+  resolved "http://registry.npm.taobao.org/can-promise/download/can-promise-0.0.1.tgz#7a7597ad801fb14c8b22341dfec314b6bd6ad8d3"
+  dependencies:
+    window-or-global "^1.0.1"
+
 caniuse-api@^1.5.2:
   version "1.6.1"
   resolved "http://registry.npm.taobao.org/caniuse-api/download/caniuse-api-1.6.1.tgz#b534e7c734c4f81ec5fbe8aca2ad24354b962c6c"
@@ -2698,6 +2704,10 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
+dijkstrajs@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/dijkstrajs/download/dijkstrajs-1.0.1.tgz#d3cd81221e3ea40742cfcde556d4e99e98ddc71b"
+
 dir-glob@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/dir-glob/download/dir-glob-2.0.0.tgz#0b205d2b6aef98238ca286598a8204d29d0a0034"
@@ -3282,7 +3292,7 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
-extend@^3.0.0, extend@~3.0.1:
+extend@>=3.0.1, extend@^3.0.0, extend@~3.0.1:
   version "3.0.1"
   resolved "http://registry.npm.taobao.org/extend/download/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
 
@@ -4818,6 +4828,10 @@ isarray@1.0.0, isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/isarray/download/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
 
+isarray@^2.0.1:
+  version "2.0.4"
+  resolved "http://registry.npm.taobao.org/isarray/download/isarray-2.0.4.tgz#38e7bcbb0f3ba1b7933c86ba1894ddfc3781bbb7"
+
 isexe@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/isexe/download/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
@@ -5982,6 +5996,14 @@ nearley@^2.7.10:
     randexp "0.4.6"
     semver "^5.4.1"
 
+nebpay.js@^0.0.1:
+  version "0.0.1"
+  resolved "http://registry.npm.taobao.org/nebpay.js/download/nebpay.js-0.0.1.tgz#17e327154eaff6ad203a98a4ccad2955edc041ae"
+  dependencies:
+    bignumber.js "^5.0.0"
+    extend ">=3.0.1"
+    qrcode "^1.2.0"
+
 nebulas@^0.4.8:
   version "0.4.8"
   resolved "http://registry.npm.taobao.org/nebulas/download/nebulas-0.4.8.tgz#5feedc06b7fa851969fe5676f26e8f96b33ec1a9"
@@ -6979,6 +7001,10 @@ pn@^1.1.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/pn/download/pn-1.1.0.tgz#e2f4cef0e219f463c179ab37463e4e1ecdccbafb"
 
+pngjs@^3.3.0:
+  version "3.3.3"
+  resolved "http://registry.npm.taobao.org/pngjs/download/pngjs-3.3.3.tgz#85173703bde3edac8998757b96e5821d0966a21b"
+
 popper.js@^1.14.1:
   version "1.14.3"
   resolved "http://registry.npm.taobao.org/popper.js/download/popper.js-1.14.3.tgz#1438f98d046acf7b4d78cd502bf418ac64d4f095"
@@ -7470,6 +7496,16 @@ q@^1.1.2:
 qrcode-terminal@^0.12.0:
   version "0.12.0"
   resolved "http://registry.npm.taobao.org/qrcode-terminal/download/qrcode-terminal-0.12.0.tgz#bb5b699ef7f9f0505092a3748be4464fe71b5819"
+
+qrcode@^1.2.0:
+  version "1.2.0"
+  resolved "http://registry.npm.taobao.org/qrcode/download/qrcode-1.2.0.tgz#330d24313fbf8d429a806091af9525250239e44a"
+  dependencies:
+    can-promise "^0.0.1"
+    dijkstrajs "^1.0.1"
+    isarray "^2.0.1"
+    pngjs "^3.3.0"
+    yargs "^8.0.2"
 
 qs@6.5.1:
   version "6.5.1"
@@ -9585,6 +9621,10 @@ widest-line@^2.0.0:
   resolved "http://registry.npm.taobao.org/widest-line/download/widest-line-2.0.0.tgz#0142a4e8a243f8882c0233aa0e0281aa76152273"
   dependencies:
     string-width "^2.1.1"
+
+window-or-global@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/window-or-global/download/window-or-global-1.0.1.tgz#dbe45ba2a291aabc56d62cf66c45b7fa322946de"
 
 window-size@0.1.0:
   version "0.1.0"
