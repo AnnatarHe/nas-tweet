@@ -21,7 +21,8 @@ const config = {
   module: {
     rules: [{
       test: /.jsx?$/,
-      exclude: [path.resolve(__dirname, '..', 'node_modules')],
+      // exclude: [path.resolve(__dirname, '..', 'node_modules')],
+      include: [path.resolve(__dirname, '..', 'fe'), /nebpay.js/],
       use: ['babel-loader']
     }, {
       test: /.styl$/,

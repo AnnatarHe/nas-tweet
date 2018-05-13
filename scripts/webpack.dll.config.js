@@ -12,7 +12,8 @@ const vendors = [
   'dayjs'
 ]
 const nebulas = [
-  'nebulas'
+  'nebulas',
+  // 'nebpay.js'
 ]
 
 const config = {

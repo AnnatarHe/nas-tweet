@@ -31,17 +31,17 @@ class Search extends React.PureComponent {
     alertMsg: '',
   }
 
-  componentDidMount() {
-    setTimeout(()=> {
-      this.setState({ song: {
-        title: 'jakdf',
-        author: 'annnatar',
-        coverUrl: 'https://avatars3.githubusercontent.com/u/8704175?v=4&s=460',
-        createdBy: 'Annatarhe',
-        createdAt: Date.now()
-      }})
-    }, 2000)
-  }
+  // componentDidMount() {
+  //   setTimeout(()=> {
+  //     this.setState({ song: {
+  //       title: 'jakdf',
+  //       author: 'annnatar',
+  //       coverUrl: 'https://avatars3.githubusercontent.com/u/8704175?v=4&s=460',
+  //       createdBy: 'Annatarhe',
+  //       createdAt: Date.now()
+  //     }})
+  //   }, 2000)
+  // }
 
   doSearch = () => {
     this.setState({ loading: true })
