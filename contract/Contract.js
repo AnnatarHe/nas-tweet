@@ -16,8 +16,8 @@ class SongItem {
         }
     }
     toString() {
-		return JSON.stringify(this);
-	}
+		  return JSON.stringify(this);
+	  }
 }
 
 class SongContract {

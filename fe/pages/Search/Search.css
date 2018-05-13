@@ -31,3 +31,19 @@
     bottom: 5rem;
     right: 5rem;
 }
+
+.highlight-inline {
+    border-radius: 4px;
+    margin: 0 .5rem;
+    padding: .2rem .5rem;
+    background-color: #2196f3;
+    color: #fff;
+}
+
+/* .card-content {
+    display: flex;
+} */
+
+.cover-url {
+    height: 20rem;
+}

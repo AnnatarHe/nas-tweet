@@ -11,7 +11,6 @@ const Loading = ({ onRefresh, ...others}) => (
       <Typography color="textSecondary" className={styles.padding}>
         由于使用区块链存取数据，所以很难立刻得到数据。需要将这次查询写入到区块链交易中，然后才能得到结果
       </Typography>
-    <Button variant="raised" color="primary" onClick={onRefresh}>刷新</Button>
   </Dialog>
 )
 

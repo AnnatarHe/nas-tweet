@@ -7,13 +7,9 @@ const vendors = [
   'react',
   'whatwg-fetch',
   'react-dom',
-  // 'redux',
-  // 'react-redux',
-  // 'react-router',
-  // 'react-router-redux',
-  // 'immutable',
-  // 'redux-thunk'
-  'react-transition-group'
+  'react-transition-group',
+  'material-ui',
+  'dayjs'
 ]
 const nebulas = [
   'nebulas'

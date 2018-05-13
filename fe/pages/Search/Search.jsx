@@ -17,10 +17,9 @@ import Loading from './Loading'
 import SongInfo from './SongInfo'
 import styles from './Search.css'
 import SongForm from './SongForm'
+import Collapse from 'material-ui/transitions/Collapse';
 
 const nebPay = new NebPay()
-const neb = new Neb()
-neb.setRequest(new HttpRequest("https://testnet.nebulas.io"));
 
 class Search extends React.PureComponent {
 
@@ -32,34 +31,37 @@ class Search extends React.PureComponent {
     alertMsg: '',
   }
 
-  // componentDidMount() {
-  //   setTimeout(()=> {
-  //     this.setState({ song: {
-  //       title: 'jakdf',
-  //       author: 'annnatar',
-  //       coverUrl: 'jsdfk',
-  //       createdBy: 'Annatarhe',
-  //       createdAt: Date.now()
-  //     }})
-  //   }, 0)
-  // }
+  componentDidMount() {
+    setTimeout(()=> {
+      this.setState({ song: {
+        title: 'jakdf',
+        author: 'annnatar',
+        coverUrl: 'https://avatars3.githubusercontent.com/u/8704175?v=4&s=460',
+        createdBy: 'Annatarhe',
+        createdAt: Date.now()
+      }})
+    }, 2000)
+  }
 
   doSearch = () => {
     this.setState({ loading: true })
-    this.serialNumber = nebPay.call(CONTRACT_ADDRESS, 0, 'get', `["${this.state.searchText}"]`, {
+    nebPay.simulateCall(CONTRACT_ADDRESS, 0, 'get', `["${this.state.searchText}"]`, {
       callback: NAS_NET_URL,
       listener: (res) => {
-        console.log(res)
-        this.listener(res.txhash)
+        if (! this.hasError(res.result)) {
+          const result = JSON.parse(res.result)
+          this.setState({ loading: false, song: result })
+        }
       }
     })
   }
 
-  listener = (txhash) => {
-    neb.api.getTransactionReceipt(txhash, function (err, resp) {
-      console.log(resp);
-      
-  });
+  hasError = result => {
+    if (result.indexOf('Error') === 0) {
+      this.setState({ alertMsg: result, loading: false, adding: false })
+      return true
+    }
+    return false
   }
 
   toTransaction = () => {
@@ -88,17 +90,22 @@ class Search extends React.PureComponent {
       result.push(x)
       return result
     }, [])
-    const argsString = JSON.stringify(args)
+    const argsString = JSON.stringify(args).replace(/\\"/g, '\\\"')
+    console.log(args, argsString)
 
     this.setState({ loading: true })
-    this.serialNumber = nebPay.call(CONTRACT_ADDRESS, 0, 'get', argsString, {
+    nebPay.simulateCall(CONTRACT_ADDRESS, 0, 'save', argsString, {
+      listener: res => {
+        if (! this.hasError(res.result)) {
+          this.setState({ loading: false, alertMsg: '成功写入区块链', adding: false })
+        }
+      },
       callback: NAS_NET_URL
     })
   }
 
   render() {
     const { searchText, song, loading, adding, alertMsg } = this.state
-    console.log(alertMsg)
     return (
       <div className={styles.container}>
         <div className={styles.searchBox}>
@@ -117,9 +124,9 @@ class Search extends React.PureComponent {
           </div>
         </div>
 
-        {song && (!loading) && (
-          <SongInfo song={song} onClick={this.toTransaction} />
-        )}
+        <Collapse in={song && (!loading)}>
+          <SongInfo song={song || {}} onClick={this.toTransaction} />
+        </Collapse>
 
         <Loading
           onClose={this.onLoadingClose}
