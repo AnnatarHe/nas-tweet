@@ -50,6 +50,9 @@ class Search extends React.PureComponent {
       listener: (res) => {
         if (! this.hasError(res.result)) {
           const result = JSON.parse(res.result)
+          if (!result) {
+            this.setState({ loading: false, alertMsg: res.execute_err})
+          }
           this.setState({ loading: false, song: result })
         }
       }
@@ -57,7 +60,7 @@ class Search extends React.PureComponent {
   }
 
   hasError = result => {
-    if (result.indexOf('Error') === 0) {
+    if (result.indexOf('Error') === 0 ) {
       this.setState({ alertMsg: result, loading: false, adding: false })
       return true
     }
